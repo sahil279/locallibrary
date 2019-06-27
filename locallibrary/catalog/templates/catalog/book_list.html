@@ -1,0 +1,35 @@
+{% extends "catalog/base_generic.html" %}
+
+{% block content %}
+  <h1>Book List</h1>
+  {% if book_list %}
+  <ul>
+    {% for book in book_list %}
+      <li>
+        <a href="{{ book.get_absolute_url }}">{{ book.title }}</a> ({{book.author}})
+      </li>
+    {% endfor %}
+  </ul>
+  {% else %}
+    <p>There are no books in the library.</p>
+  {% endif %}
+{% endblock %}
+
+
+
+<!-- We use the if, else, and endif template tags to check whether the book_list has been
+ defined and is not empty. If book_list is empty, then the else clause displays text
+explaining that there are no books to list. If book_list is not empty, then we iterate
+through the list of books.
+ -->
+
+
+
+ <!-- The template uses the for and endfor template tags to loop through the book list, as shown below.
+  Each iteration populates the book template variable with information for the current list item.
+
+ {% for book in book_list %}
+   <li>  code here get information from each book item  </li>
+ {% endfor %}
+ While not used here, within the loop Django will also create other variables that you can use to track the iteration
+ . For example, you can test the forloop.last variable to perform conditional processing the last time that the loop is run. -->
