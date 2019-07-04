@@ -12,4 +12,5 @@
     <li><strong>Authors:</strong> {{ num_authors }}</li>
     <li><strong>NUMBER OF GENRE:</strong>{{ name_genre }}</li>
   </ul>
+  <p>You have visited this page <strong>{{ num_visits }}{% if num_visits == 1 %} time{% else %} times{% endif %}.</strong></p>
 {% endblock %}
